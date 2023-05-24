@@ -89,7 +89,13 @@
   y.src='https://js.appboycdn.com/web-sdk/4.7/braze.min.js';
   y.async=1;(b=p.getElementsByTagName(P)[0]).parentNode.insertBefore(y,b)
 }(window,document,'script');
-  braze.initialize("3ec83d48-bbcb-404c-b640-300c9212d6ed", { baseUrl: "sondheim.braze.com"});
+braze.initialize('3ec83d48-bbcb-404c-b640-300c9212d6ed', {
+   baseUrl: "sondheim.braze.com",
+   allowUserSuppliedJavascript: true,
+   enableLogging: true,
+   sessionTimeoutInSeconds: 30,
+   minimumIntervalBetweenTriggerActionsInSeconds: 30
+ });
   braze.automaticallyShowInAppMessages();
   braze.subscribeToContentCardsUpdates(function(contentCards) {
     console.log(contentCards);
