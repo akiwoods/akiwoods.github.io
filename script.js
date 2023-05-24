@@ -86,7 +86,7 @@ document.getElementById("birthday_button").addEventListener("click", function(){
   var year = document.getElementById("birthday").value.substring(0,4);
 
   // TODO ADD CODE HERE (FOLLOW THE DOCUMENTATION CLOSELY!)
-  braze.getUser().setDateOfBirth(year, month, day)
+  braze.getUser().setDateOfBirth(year, month, day);
 });
 
 var countryy = document.getElementById("country_text");
