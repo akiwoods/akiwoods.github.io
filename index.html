@@ -294,9 +294,7 @@ braze.initialize('3ec83d48-bbcb-404c-b640-300c9212d6ed', {
     <br />
 
   </div>
-<script>
-  const featureFlag = braze.getFeatureFlag("pushNative");
-  if (featureFlag.enabled) {
+
     <h2 style="color:green;">Push</h2>
 
       <button id="register" onclick="pushRegister()">Register for Push</button>
@@ -308,11 +306,6 @@ braze.initialize('3ec83d48-bbcb-404c-b640-300c9212d6ed', {
       <button id="test_button" type="button" class="btn btn-primary" data-toggle="modal" data-target="#testModal">
         Test It!
       </button>
-
-  } else {
-    // use old feature
-  }
-  </script>
 
   <div class="modal fade" id="testModal" tabindex="-1" role="dialog" aria-labelledby="testModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -347,6 +340,16 @@ braze.initialize('3ec83d48-bbcb-404c-b640-300c9212d6ed', {
 function pushRegister(){
   braze.requestPushPermission();
 }
+</script>
+<script>
+const featureFlag = braze.getFeatureFlag("pushNative");
+if (featureFlag.enabled) {
+  document.getElementById("register").style.display = "block";
+
+} else {
+  document.getElementById("register").style.display = "none";
+}
+
 </script>
 
 </html>
