@@ -298,7 +298,7 @@ braze.initialize('3ec83d48-bbcb-404c-b640-300c9212d6ed', {
 
 <h2 style="color:green;">Push</h2>
 
-  <button id="register">Register for Push</button>
+  <button id="register" onclick="pushRegister">Register for Push</button>
   <button id="unregister">Unregister for Push</button>
   <br />
   <br />
@@ -336,6 +336,11 @@ braze.initialize('3ec83d48-bbcb-404c-b640-300c9212d6ed', {
   $('#myModal').on('shown.bs.modal', function() {
     $('#myInput').trigger('focus')
   })
+</script>
+<script>
+function pushRegister(){
+  braze.requestPushPermission();
+}
 </script>
 
 </html>
