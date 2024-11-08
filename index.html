@@ -106,7 +106,7 @@ braze.initialize('3ec83d48-bbcb-404c-b640-300c9212d6ed', {
 
   braze.openSession();
 
-  braze.requestBannersRefresh("aki_hero")
+  braze.requestBannersRefresh(["aki_hero"])
   
   braze.subscribeToBannersUpdates((banners) => {
     console.log(`Banners were updated`);
@@ -116,7 +116,7 @@ braze.initialize('3ec83d48-bbcb-404c-b640-300c9212d6ed', {
 const globalBanner = braze.getBanner("aki_hero");
 
 // choose where in the DOM you want to insert the banner HTML
-const container = document.getElementById("hero");
+const container = document.getElementById("aki-hero");
 
 // Insert the banner which replacees the innerHTML of that container
 braze.insertBanner(globalBanner, container);
@@ -131,7 +131,7 @@ if (globalBanner.isControl) {
 
 <body>
 
-    <div class="hero-content" id="hero">
+    <div class="hero-content" id="aki-hero">
     </div>
 
   <br />
