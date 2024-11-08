@@ -102,10 +102,15 @@ braze.initialize('3ec83d48-bbcb-404c-b640-300c9212d6ed', {
     console.log(contentCards);
   });
   
+ 
+
+  braze.openSession();
+
+  braze.requestBannersRefresh(["aki_hero"])
+  
   braze.subscribeToBannersUpdates((banners) => {
     console.log(`Banners were updated`);
 })
-braze.requestBannersRefresh(["aki_hero"])
 
 // get this placement's banner. If it's `null` the user did not qualify for one.
 const globalBanner = braze.getBanner("aki_hero");
@@ -121,8 +126,6 @@ if (globalBanner.isControl) {
     // hide or collapse the container
     container.style.display = 'none';
 }
-
-  braze.openSession();
 </script>
 </head>
 
