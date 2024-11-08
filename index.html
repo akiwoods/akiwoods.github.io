@@ -106,7 +106,7 @@ braze.initialize('3ec83d48-bbcb-404c-b640-300c9212d6ed', {
 
   braze.openSession();
 
-  braze.requestBannersRefresh(["aki_hero"])
+  braze.requestBannersRefresh("aki_hero")
   
   braze.subscribeToBannersUpdates((banners) => {
     console.log(`Banners were updated`);
@@ -130,7 +130,7 @@ if (globalBanner.isControl) {
 </head>
 
 <body>
-  
+
     <div class="hero-content" id="hero">
     </div>
 
