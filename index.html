@@ -90,7 +90,7 @@
       y.async=1;(b=p.getElementsByTagName(P)[0]).parentNode.insertBefore(y,b)
     }(window,document,'script');
 
-braze.initialize('3ec83d48-bbcb-404c-b640-300c9212d6ed', {
+braze.initialize('6a73367f-7f09-4e68-9ab3-4abfaaa8d24b', {
    baseUrl: "sondheim.braze.com",
    allowUserSuppliedJavascript: true,
    enableLogging: true,
@@ -106,14 +106,14 @@ braze.initialize('3ec83d48-bbcb-404c-b640-300c9212d6ed', {
 
   braze.openSession();
 
-  braze.requestBannersRefresh(["aki_hero"])
+  braze.requestBannersRefresh(["akiplace"])
   
   braze.subscribeToBannersUpdates((banners) => {
     console.log(`Banners were updated`);
 })
 
 // get this placement's banner. If it's `null` the user did not qualify for one.
-const globalBanner = braze.getBanner("aki_hero");
+const globalBanner = braze.getBanner("akiplace");
 
 // choose where in the DOM you want to insert the banner HTML
 const container = document.getElementById("aki-hero");
