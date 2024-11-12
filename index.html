@@ -102,15 +102,14 @@ braze.initialize('6a73367f-7f09-4e68-9ab3-4abfaaa8d24b', {
     console.log(contentCards);
   });
   
- 
+  braze.subscribeToBannersUpdates((banners) => {
+    console.log(`Banners were updated`);
+})
 
   braze.openSession();
 
   braze.requestBannersRefresh(["akiplace"])
-  
-  braze.subscribeToBannersUpdates((banners) => {
-    console.log(`Banners were updated`);
-})
+
 
 // get this placement's banner. If it's `null` the user did not qualify for one.
 const globalBanner = braze.getBanner("akiplace");
