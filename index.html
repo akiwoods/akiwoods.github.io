@@ -106,9 +106,7 @@ braze.initialize('6a73367f-7f09-4e68-9ab3-4abfaaa8d24b', {
     console.log(`Banners were updated`);
 })
 
-  braze.openSession();
-
-  braze.requestBannersRefresh(["akiplace"])
+braze.requestBannersRefresh(["akiplace"])
 
 
 // get this placement's banner. If it's `null` the user did not qualify for one.
@@ -125,6 +123,10 @@ if (globalBanner.isControl) {
     // hide or collapse the container
     container.style.display = 'none';
 }
+
+  braze.openSession();
+
+
 </script>
 </head>
 
