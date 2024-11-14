@@ -338,6 +338,25 @@ braze.initialize('6a73367f-7f09-4e68-9ab3-4abfaaa8d24b', {
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
+<script>
+//Banner Handling
+  braze.requestBannersRefresh(["akiplace"])
+    // get this placement's banner. If it's `null` the user did not qualify for one.
+  const globalBanner = braze.getBanner("akiplace");
+    
+    // choose where in the DOM you want to insert the banner HTML
+  const container = document.getElementById("aki-hero");
+    
+    // Insert the banner which replacees the innerHTML of that container
+  braze.insertBanner(globalBanner, container);
+    
+    // Special handling if the user is part of a Control Variant
+  if (globalBanner.isControl) {
+        // hide or collapse the container
+        container.style.display = 'none';
+    }
+</script>
+
 <script type="text/javascript" src="script.js"></script>
 <script>
   $('#myModal').on('shown.bs.modal', function() {
@@ -350,23 +369,6 @@ function pushRegister(){
 }
 </script>
 <script>
-//Banner Handling
-braze.requestBannersRefresh(["akiplace"])
-  // get this placement's banner. If it's `null` the user did not qualify for one.
-const globalBanner = braze.getBanner("akiplace");
-  
-  // choose where in the DOM you want to insert the banner HTML
-const container = document.getElementById("aki-hero");
-  
-  // Insert the banner which replacees the innerHTML of that container
-braze.insertBanner(globalBanner, container);
-  
-  // Special handling if the user is part of a Control Variant
-if (globalBanner.isControl) {
-      // hide or collapse the container
-      container.style.display = 'none';
-  }
-
 const featureFlag = braze.getFeatureFlag("pushNative");
 if (featureFlag.enabled) {
   document.getElementById("register").style.display = "block";
