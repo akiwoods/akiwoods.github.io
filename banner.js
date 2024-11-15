@@ -4,6 +4,8 @@ braze.requestBannersRefresh(["akiplace"])
 // get this placement's banner. If it's `null` the user did not qualify for one.
 const globalBanner = braze.getBanner("akiplace");
 
+const secondBanner = braze.getBanner("secondspace");
+
 // choose where in the DOM you want to insert the banner HTML
 const container = document.getElementById("aki-hero");
 
